@@ -1,15 +1,20 @@
 function Spinner() {
     var count = 0;
-    this.up = function() {
+    up = function() {
         count = count + 1; 
         return count;
     }
-    this.down = function(){
+    down = function(){
         count = count - 1; 
         return count;
     }
+
+    return {
+        up: up,
+        down: down,
+    }
 }
-var s = new Spinner();
+var s = Spinner();
 s.up();
 s.up();
 s.up();
