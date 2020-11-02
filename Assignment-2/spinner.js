@@ -9,7 +9,7 @@ function Spinner() {
         return count;
     }
 }
-var s = new spinner();
+var s = new Spinner();
 s.up();
 s.up();
 s.up();
