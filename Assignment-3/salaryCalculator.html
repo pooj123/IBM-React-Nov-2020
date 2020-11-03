@@ -22,7 +22,7 @@
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
     <script type="text/babel">
-    class salaryCalculator extends React.Component {
+    class SalaryCalculator extends React.Component {
         state = {
             basic: 0,
             hra: 0,
@@ -32,7 +32,7 @@
         };
 
         salaryCalculatorFunc = () => {
-            total = (this.state.basic + this.state.hra + this.state.da) * ((100-this.state.tax)/100) ,
+            const total = (this.state.basic + this.state.hra + this.state.da) * ((100-this.state.tax)/100);
             this.setState({sal : total});
         }
 
@@ -78,7 +78,7 @@
             )
         }
     }
-    ReactDOM.render(<salaryCalculator/>, document.getElementById('root'));
+    ReactDOM.render(<SalaryCalculator/>, document.getElementById('root'));
 </script>
 </head>
 <body>
