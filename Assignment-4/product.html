@@ -11,8 +11,8 @@
     <script type="text/babel">
         class Products extends React.Component{
             state = { 
+                newProduct : '',
                 productNamesArray : [],
-                newProduct : ''
             };
 
             newProductName = (evt) => {
@@ -30,7 +30,7 @@
                         <h1>Products</h1>
                         <hr/>
                         <label>Product Name :</label>
-                        <input type="text" onChange={ newProductName(evt)}/>
+                        <input type="text" onChange={ this.newProductName}/>
                         <input type="button" value="Add Product" onClick={this.addProduct}/>
                         <ol>
                             {productItems}
