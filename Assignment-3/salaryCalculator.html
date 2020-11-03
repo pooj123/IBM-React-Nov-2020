@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salary Calculator</title>
+    <style>
+        .field{
+            margin-bottom: 10px;
+        }
+        label{ 
+            display : block 
+        }
+        td{ 
+            padding-right : 10px;
+            font-size: 18pt;
+        }
+    
+    </style>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+<script type="text/babel">
+    class salaryCalculator extends React.Component {
+        state = {
+            basic: 0,
+            hra: 0,
+            da: 0,
+            tax: 0,
+            sal:0,
+        };
+
+        salaryCalculatorFunc = () => {
+            total = (this.state.basic + this.state.hra + this.state.da) * ((100-this.state.tax)/100) ,
+            this.setState({sal : total});
+        }
+
+        render() {
+            const { basic, hra, da, tax, salary } = this.state;
+            return (
+                <div>
+                    <h1>Salary Calculator</h1>
+                    <hr/>
+                    <div class="field">
+                        <label for="">Basic :</label>
+                        <input type="number" name="" id="" onChange={evt => this.setState({ basic : parseInt(evt.target.value)})}/>
+                    </div>
+                    <div class="field">
+                        <label for="">HRA :</label>
+                        <input type="number" name="" id="" onChange={evt => this.setState({hra:parseInt(evt.target.value)})}/>
+                    </div>
+                    <div class="field">
+                        <label for="">DA :</label>
+                        <input type="number" name="" id="" onChange={evt => this.setState({ da:parseInt(evt.target.value)})}/>
+                    </div>
+                    <div class="field">
+                        <label for="">Tax :</label>
+                        <input type="range" name="" id="" min="0" max="30" onChange={evt => this.setState({tax:parseInt(evt.target.value)})}/>
+                    </div>
+                    <div class="field">
+                        <input type="button" value="Calculate" onClick={this.salaryCalculatorFunc}/>
+                    </div>
+                    <div class="field">
+                        <table>
+                        <tbody>
+                            <tr>
+                                <td>[Basic is {basic}] </td>
+                                <td>[HRA is {hra}]</td>
+                                <td>[DA is {da}]</td>
+                                <td>[Tax is {tax}]</td>
+                                <td>[Salary is {sal}]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<salaryCalculator/>, document.getElementById('root'));
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
