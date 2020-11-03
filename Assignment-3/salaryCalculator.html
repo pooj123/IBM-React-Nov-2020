@@ -21,7 +21,7 @@
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
-<script type="text/babel">
+    <script type="text/babel">
     class salaryCalculator extends React.Component {
         state = {
             basic: 0,
@@ -42,26 +42,26 @@
                 <div>
                     <h1>Salary Calculator</h1>
                     <hr/>
-                    <div class="field">
-                        <label for="">Basic :</label>
+                    <div className="field">
+                        <label htmlFor="">Basic :</label>
                         <input type="number" name="" id="" onChange={evt => this.setState({ basic : parseInt(evt.target.value)})}/>
                     </div>
-                    <div class="field">
-                        <label for="">HRA :</label>
+                    <div className="field">
+                        <label htmlFor="">HRA :</label>
                         <input type="number" name="" id="" onChange={evt => this.setState({hra:parseInt(evt.target.value)})}/>
                     </div>
-                    <div class="field">
-                        <label for="">DA :</label>
+                    <div className="field">
+                        <label htmlFor="">DA :</label>
                         <input type="number" name="" id="" onChange={evt => this.setState({ da:parseInt(evt.target.value)})}/>
                     </div>
-                    <div class="field">
-                        <label for="">Tax :</label>
+                    <div className="field">
+                        <label htmlFor="">Tax :</label>
                         <input type="range" name="" id="" min="0" max="30" onChange={evt => this.setState({tax:parseInt(evt.target.value)})}/>
                     </div>
-                    <div class="field">
+                    <div className="field">
                         <input type="button" value="Calculate" onClick={this.salaryCalculatorFunc}/>
                     </div>
-                    <div class="field">
+                    <div className="field">
                         <table>
                         <tbody>
                             <tr>
