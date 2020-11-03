@@ -23,7 +23,7 @@
                 this.setState({ productNamesArray : [...productNamesArray, newProduct]});
             }
             render(){
-                const { productNamesArray, newProduct } = this.state;
+                const { productNamesArray } = this.state;
                 const productItems = productNamesArray.map((productName, index) => (<li key={index}>{productName}</li>));
                 return(
                     <div>
