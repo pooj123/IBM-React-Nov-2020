@@ -20,7 +20,7 @@
             }
 
             addProduct = () => {
-                if (productNamesArray.includes(newProduct)) {
+                if (this.state.productNamesArray.includes(this.state.newProduct)) {
                     alert('product exists');
                 } else {
                     this.setState({ productNamesArray : [...productNamesArray, newProduct]});
