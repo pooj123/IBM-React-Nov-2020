@@ -15,12 +15,16 @@
                 productNamesArray : [],
             };
 
-            newProductName = (evt) => {
-                this.setState({newProduct: evt.target.value});
+            newProductName = (e) => {
+                this.setState({newProduct: e.target.value});
             }
 
             addProduct = () => {
-                this.setState({ productNamesArray : [...productNamesArray, newProduct]});
+                if (productNamesArray.includes(newProduct)) {
+                    alert('product exists');
+                } else {
+                    this.setState({ productNamesArray : [...productNamesArray, newProduct]});
+                }               
             }
             render(){
                 const { productNamesArray } = this.state;
