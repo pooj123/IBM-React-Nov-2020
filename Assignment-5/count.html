@@ -12,11 +12,10 @@
 
         class ProductsCount extends React.Component {
             render() {
-                const { data } = this.props
                 return (
                     <div>
                         <span>Count : </span>
-                        <span>{data}</span>
+                        <span>{this.props.data}</span>
                     </div>
                 )
             }
@@ -30,7 +29,9 @@
 
             onBtnAddProductClick = () => {
                 const newProductName = this.txtNewProductNameRef.current.value;
-                this.setState({ productNames : [ ...this.state.productNames, newProductName] });
+                this.setState({ productNames : [ ...this.state.productNames, newProductName] }, () => {
+                    this.props.onProductChange(this.state.productNames);
+                });                
             }
 
             render(){
@@ -40,11 +41,6 @@
                     <div>
                         <h1>Products</h1>
                         <hr/>
-                        <div>
-                            <span>Count : </span>
-                            <span>{productNames.length}</span>
-                        </div>
-                        <ProductsCount data={this.state.productNames.length} />
                         <label>Product Name :</label>
                         <input type="text" ref={this.txtNewProductNameRef} />
                         <input type="button" value="Add Product" onClick={this.onBtnAddProductClick}/>
@@ -56,8 +52,26 @@
             }
         }
 
+        class FullProduct extends React.Component {
+            state = {
+                count: 0,
+            }
 
-        ReactDOM.render(<Products/>, document.getElementById('root'));
+            onProductIsChanged = (product) => {
+                this.setState({ count: product.length})
+            }
+            render() {
+                return (
+                    <div>
+                        <ProductsCount data={this.state.count} />
+                        <Products onProductChange={this.onProductIsChanged}/>
+                    </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(<FullProduct/>, document.getElementById('root'));
     </script>
 </head>
 <body>
