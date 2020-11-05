@@ -134,9 +134,10 @@
 
         function ProductsData(props){
             const allProducts = props.allProducts.map((product, key) => {
+                const outOfStock = product.outOfStock ? "outofstock" : "name"
                 return (
                     <li key={key}>
-                        <span className="name">{product.name}</span>
+                        <span className={outOfStock}>{product.name}</span>
                         <div>{product.description}</div>
                         <div className="price">{product.price}</div>
                         <input type="checkbox" id={product.id} checked={product.outOfStock} onChange={props.onOutOfStockToggle}/>
@@ -182,7 +183,7 @@
                     id : ++newProductId,
                     name : name,
                     description : description,
-                    price : price
+                    price : price, outOfStock: false,
                 };
                 const action = { type : 'ADD_PRODUCT' , payload : newProduct};
                 return action;
