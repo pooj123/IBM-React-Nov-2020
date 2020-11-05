@@ -10,18 +10,17 @@ class ProductEditor extends Component {
     };
 
     onCategoryChange = (evt) => {
-      console.log(evt.target);
       this.setState({ category: evt.target.value});
     }
 
     onAddNewProductClick = () => {
-        const { addNew } = this.props,
-            { name, description, price, category } = this.state;
+        const { addNew } = this.props;
+        const { name, description, price, category } = this.state;
         addNew(name, description, price, category);
     };
 
     render() {
-      let categoriesList = this.props.categories.map((category) => (<option key={category.id} value={category.name}>{category.name}</option>));
+      const categoriesList = this.props.categories.map((category) => (<option>{category.name}</option>));
         return (
           <section className="edit">
             <div className="field">
