@@ -22,7 +22,7 @@ class Categories extends Component{
                 <input type="text" onChange={ evt => this.setState({ newCategorName : evt.target.value})} />                
                 <input type="button" value="Add New" onClick={this.onAddNewClick} />
                 <ol>
-                    { data.map(category => (<li key={category.id}>{category.name} </li>)) }
+                    { data.map(category => (<p>{category.name} </p>)) }
                 </ol>
             </div>
         )
