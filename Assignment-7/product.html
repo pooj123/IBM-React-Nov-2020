@@ -85,6 +85,14 @@
                 console.log(this.state);
                 removeProduct(evt.target.id);
             }
+            onOutOfStockToggle = (evt) => {
+                const { outOfStock } = this.props;
+                outOfStock(evt.target.id);
+            };
+            removeOutOfStock = () => {
+                const { removeOutOfStock} = this.props;
+                removeOutOfStock();
+            }
             render(){
                 const { data } = this.props;
                 return(
@@ -92,7 +100,7 @@
                         <h3>Products</h3>
                         <hr/>
                         <section className="stats">
-                            <span className="outofstock">1</span>
+                            <span className="outofstock">{data.filter((product) => { return product.outOfStock}).length}</span>
                             <span> / </span>
                             <span>{data.length}</span>
                         </section>
@@ -115,9 +123,9 @@
                         </section>
                         <section className="list">
                             <ol>
-                                <ProductsData allProducts={data} removeProduct={this.removeProduct} />
+                                <ProductsData allProducts={data} removeProduct={this.removeProduct} onOutOfStockToggle={this.onOutOfStockToggle} />
                             </ol>
-                            <input type="button" value="Remove Out Of Stock" />
+                            <input type="button" value="Remove Out Of Stock" onClick={this.removeOutOfStock} />
                         </section>
                     </div>
                 )
@@ -131,7 +139,7 @@
                         <span className="name">{product.name}</span>
                         <div>{product.description}</div>
                         <div className="price">{product.price}</div>
-                        <input type="checkbox" />
+                        <input type="checkbox" id={product.id} checked={product.outOfStock} onChange={props.onOutOfStockToggle}/>
                         <label htmlFor="">Out of Stock</label>
                         <br/>
                         <input type="button" value="Remove" id={product.id} onClick={props.removeProduct} />
@@ -148,6 +156,20 @@
             }
             if (action.type === 'REMOVE_PRODUCT'){
                 const newState = currentState.filter((product) => { return product.id !== parseInt(action.payload.id)});
+                return newState;
+            }
+            if (action.type === 'OUT_OF_STOCK'){
+                const newState = currentState.map((product) => {
+                    if (product.id === parseInt(action.payload.id)){
+                        const prod = {...product , outOfStock: !product.outOfStock};
+                        return prod;
+                    }
+                    return product;
+                });
+                return newState;
+            }
+            if (action.type === 'REMOVE_OUT_OF_STOCK'){
+                const newState = currentState.filter((product) => { return !product.outOfStock;});
                 return newState;
             }
             return currentState;
@@ -167,6 +189,14 @@
             },
             removeProduct(id) {
                 const action = { type : 'REMOVE_PRODUCT' , payload : {id}};
+                return action;
+            },
+            outOfStock(id){
+                const action = { type : 'OUT_OF_STOCK', payload: {id}};
+                return action;
+            },
+            removeOutOfStock(){
+                const action ={ type: 'REMOVE_OUT_OF_STOCK'}
                 return action;
             }
         }
