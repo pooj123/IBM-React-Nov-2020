@@ -14,10 +14,11 @@ class Categories extends Component{
     }
 
     render(){
-        const { data, selected, setSelected } = this.props;
+        const { data, selected, setSelected , load } = this.props;
         return(
             <div>
-                <h3>Categores</h3>
+                <h3>Categories</h3>
+                <input type="button" value="LOAD CATEGORIES" onClick={load} />
                 <hr></hr>
                 <label>Category Name :</label>
                 <input type="text" onChange={ evt => this.setState({ newCategorName : evt.target.value})} />                
