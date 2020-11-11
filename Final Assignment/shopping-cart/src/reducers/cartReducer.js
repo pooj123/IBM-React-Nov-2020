@@ -4,12 +4,14 @@ function cartReducer (currentState = [], action) {
         let newState = currentState.map((product) => {
                 if (action.payload.productID === product.productID){
                     present = true;
+                    // if present, increment quantity and keep other properties same
                     const newItem = { ...product , quantity: action.payload.quantity};
                     return newItem;
                 }
                 return product;
             });
             if (!present){
+                // if not present, add the new product
                 newState = [...currentState, action.payload]
             };
         return newState;
