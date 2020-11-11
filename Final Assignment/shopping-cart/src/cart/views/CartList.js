@@ -1,9 +1,10 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-const CartList = (props) => {
-    const {cartItems, products} = props;
-    const cartList = cartItems.map((product) => (
+class CartList extends React.Component {
+    render() {
+        const {cartItems, products} = this.props;
+        const cart = cartItems.map((product) => (
         <CartItem
             cart={product}
             key={product.id}
@@ -12,9 +13,10 @@ const CartList = (props) => {
     ));
     return (
         <div>
-            {cartList}
+            {cart}
         </div>
     );
-};
+    }
+}
 
 export default CartList;
