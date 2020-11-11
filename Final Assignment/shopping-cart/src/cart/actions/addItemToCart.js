@@ -36,16 +36,16 @@ function checkIfExists(arr, id) {
   }
   
 
-function addItemToCart(productID, productList, cartItems){
+function addItemToCart(product, cartItems){
     return (dispatch) => {
-        console.log(productList);
+        console.log(product);
         // func to check if product already exists in cart items
-        const prodExists =  checkIfExists(cartItems, productID);
+        const prodExists =  checkIfExists(cartItems, product.id);
         // if product exists, then increment quantity
         const initialElement = {
             id: 0,
             quantity: 0,
-            productID: productList.id,
+            productID: product.id,
             present: false,
         }
         // find the element that already exists and increment
@@ -57,7 +57,7 @@ function addItemToCart(productID, productList, cartItems){
             initialElement.present = true;
         } else {
             initialElement.quantity = prodExists.quantity + 1;
-            initialElement.id = productList.id;
+            initialElement.id = product.id;
             initialElement.present = true; 
         }
         cartApi

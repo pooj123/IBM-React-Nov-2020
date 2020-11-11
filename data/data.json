@@ -127,6 +127,30 @@
       "quantity": 1,
       "productID": 5,
       "present": true
+    },
+    {
+      "id": 6,
+      "quantity": 1,
+      "productID": 2,
+      "present": true
+    },
+    {
+      "id": 7,
+      "quantity": 1,
+      "productID": 9,
+      "present": true
+    },
+    {
+      "id": 8,
+      "quantity": 1,
+      "productID": 2,
+      "present": true
+    },
+    {
+      "id": 9,
+      "quantity": 1,
+      "productID": 7,
+      "present": true
     }
   ]
 }
