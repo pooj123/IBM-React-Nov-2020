@@ -11,27 +11,9 @@ export function getAllCartItemsFromServer() {
             });
     }
 }
-// function addItemToCart(productToCart, cart){
-//     return function(dispatch){
-//         console.log('additemtocart func', productToCart);
-//         console.log('cart in additemtocart func', cart);
-//         cartApi
-//             .save(productToCart, cart)
-//             .then(product => {
-//                 console.log('new prod',product)
-//                 const action = { type: "ADD_PRODUCT_TO_CART", payload: {product, cart} };
-//                 dispatch(action);
-//             })
-//     };
-// }
 
 function checkIfExists(arr, id) {
     const found = arr.find(el => el.productID === id);
-    // if (found) {
-    //     return true;
-    // } else {
-    //     return false;
-    // }
     return found;
   }
   

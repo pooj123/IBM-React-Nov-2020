@@ -1,7 +1,8 @@
 import addItemToCart from './addItemToCart';
+import removeItemFromCart from './removeFromCart';
 
 const cartActionCreators = { 
-    addItemToCart,
+    addItemToCart, removeItemFromCart,
 };
 
 export default cartActionCreators;

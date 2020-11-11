@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import cartActionCreators from '../actions/index';
+import removeItemFromCart from '../actions/removeFromCart';
 
 class CartItem extends Component {
     render() {
+        const {removeItemFromCart, cartItems} = this.props;
         const product = this.props.products.filter((item) => {
             return item.id === this.props.cart.productID;
         });
@@ -16,11 +18,23 @@ class CartItem extends Component {
                 <div>{product[0].description}</div>
                 <div><h4>Quantity: {this.props.cart.quantity}</h4> </div>
                 <div className="price">Rs.{product[0].price}</div>
+                <input 
+                    type="button" 
+                    value="Remove From Cart" 
+                    onClick={() => removeItemFromCart(product[0], cartItems)} /> 
             </li>
         )
     }
 } 
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(cartActionCreators,dispatch);
+const mapStateToProps = (state) => {
+    return {
+        cartItems: state.cart,
+    }
+}
 
-export default connect(null,mapDispatchToProps)(CartItem)
+const mapDispatchToProps = (dispatch) => ({
+    removeItemFromCart: (product, cart) => dispatch(removeItemFromCart(product, cart))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(CartItem)

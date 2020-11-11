@@ -9,7 +9,6 @@ import ProductsList from './views/ProductsList';
 import './index.css';
 import productActionCreators from './actions';
 import cartActionCreators from '../cart/actions/index';
-import addItemToCart from '../cart/actions/addItemToCart';
 
 /* class Products extends React.Component {
     componentDidMount() {

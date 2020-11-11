@@ -14,6 +14,10 @@ function cartReducer (currentState = [], action) {
             };
         return newState;
     }
+    if (action.type === 'REMOVE_PRODUCT_FROM_CART') {
+        const newState = currentState.filter(p => p.id !== action.payload.id);
+        return newState;
+    }
     return currentState;
 }
 export default cartReducer;
