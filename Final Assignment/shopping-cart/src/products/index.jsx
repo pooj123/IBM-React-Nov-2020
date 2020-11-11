@@ -8,6 +8,8 @@ import ProductEditor from './views/ProductEditor';
 import ProductsList from './views/ProductsList';
 import './index.css';
 import productActionCreators from './actions';
+import cartActionCreators from '../cart/actions/index';
+import addItemToCart from '../cart/actions/addItemToCart';
 
 /* class Products extends React.Component {
     componentDidMount() {
@@ -32,8 +34,8 @@ import productActionCreators from './actions';
     }
 } */
 
- const Products = ({ data, categories, toggleOutOfStock, remove, removeOutOfStock, addNew, load }) => {
-     useEffect(load, [load]);
+ const Products = ({ data, categories, toggleOutOfStock, remove, removeOutOfStock, addNew, load, addItemToCart, cart }) => {
+    useEffect(load, [load]);
      return (
         <div>
             <h3>Products</h3>
@@ -46,30 +48,22 @@ import productActionCreators from './actions';
                 toggleOutOfStock={toggleOutOfStock}
                 remove={remove}
                 removeOutOfStock={removeOutOfStock}
+                addItemToCart={addItemToCart}
+                cart={cart}
             />
         </div>
     );
 }
 
-    
-
-/* function mapStateToProps(storeState){
-    const products = storeState.products,
-        categories = storeState.categories.categoryList,
-        selectedCatgory = storeState.categories.selectedCategory;
-    if (selectedCatgory !== '')
-        return { data : products.filter(p => p.category === selectedCatgory), categories };
-    return { data : products, categories};
-} */
-
-const mapStateToProps = ({ products, categories}) => {
+const mapStateToProps = ({ products, categories, cart}) => {
     const selectedCatgory = categories.selectedCategory;
     if (selectedCatgory !== "")
       return {
         data: products.filter(p => p.category === selectedCatgory),
-        categories : categories.categoryList
+        categories : categories.categoryList,
+        cart: cart,
       };
-    return { data: products, categories : categories.categoryList };
+    return { data: products, categories : categories.categoryList, cart: cart };
 }
 
 /* function mapDispatchToProps(dispatch){
@@ -77,6 +71,10 @@ const mapStateToProps = ({ products, categories}) => {
     return productActionDispatchers;
 } */
 
-const mapDispatchToProps = dispatch => bindActionCreators(productActionCreators, dispatch);
+// const mapDispatchToProps = (dispatch) => bindActionCreators({...productActionCreators, ...cartActionCreators}, dispatch);
+
+const mapDispatchToProps = dispatch => {
+    return {...bindActionCreators(productActionCreators, dispatch), ...bindActionCreators(cartActionCreators, dispatch)}
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

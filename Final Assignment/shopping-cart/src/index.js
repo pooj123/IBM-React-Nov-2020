@@ -9,6 +9,8 @@ import Products from "./products";
 import Categories from "./categories";
 import TimerContainer from './timer/TimerContainer';
 import Home from './Home';
+import Cart from "./cart";
+
 
 import store from "./store";
 
@@ -30,12 +32,16 @@ ReactDOM.render(
           <span>
             [ <Link to="/categories">Categories</Link> ]
           </span>
+          <span>
+            [ <Link to="/cart">Cart</Link> ]
+          </span>
         </div>
         <hr />
         <TimerContainer />
         <Switch>
           <Route path="/categories" component={Categories}/>
           <Route path="/products" component={Products}/>
+          <Route path="/cart" component={Cart}/>
           <Route exact path="/" component={Home} />
         </Switch>
       </Provider>

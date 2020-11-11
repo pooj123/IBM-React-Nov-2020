@@ -1,0 +1,192 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Stationary"
+    },
+    {
+      "id": 2,
+      "name": "Grocery"
+    },
+    {
+      "id": 3,
+      "name": "Utencils"
+    }
+  ],
+  "products": [
+    {
+      "id": 2,
+      "name": "Pencil",
+      "isOutOfStock": false,
+      "price": 5,
+      "category": "Stationary",
+      "description": "Ipsum anim dolore irure amet ut ullamco sint deserunt est eiusmod. Cupidatat excepteur sint exercitation laboris ut. Velit et voluptate irure dolore velit irure consequat Lorem aliqua non velit exercitation laborum."
+    },
+    {
+      "id": 4,
+      "name": "Frying Pan",
+      "description": "Ipsum anim dolore irure amet ut ullamco sint deserunt est eiusmod. Cupidatat excepteur sint exercitation laboris ut. Velit et voluptate irure dolore velit irure consequat Lorem aliqua non velit exercitation laborum.",
+      "price": 250,
+      "isOutOfStock": true,
+      "category": "Utensil"
+    },
+    {
+      "id": 5,
+      "name": "plates",
+      "description": "dining plates",
+      "price": 500,
+      "isOutOfStock": false,
+      "category": "dining"
+    },
+    {
+      "id": 6,
+      "name": "stove",
+      "description": "stove for cooking",
+      "price": 3000,
+      "isOutOfStock": false,
+      "category": "utencils"
+    },
+    {
+      "id": 7,
+      "name": "olive oil",
+      "description": "cooking",
+      "price": 200,
+      "isOutOfStock": false,
+      "category": "grocery"
+    },
+    {
+      "id": 8,
+      "name": "chair",
+      "description": "qwert",
+      "price": 1000,
+      "isOutOfStock": false,
+      "category": "entertainment"
+    },
+    {
+      "id": 9,
+      "name": "desk",
+      "description": "kajetfdajsu",
+      "price": 2000,
+      "isOutOfStock": false,
+      "category": "movie"
+    },
+    {
+      "id": 10,
+      "name": "chocolate",
+      "description": "milk",
+      "price": 20,
+      "isOutOfStock": false,
+      "category": "blue"
+    },
+    {
+      "id": 11,
+      "name": "biscuit",
+      "description": "oreo",
+      "price": 50,
+      "isOutOfStock": false,
+      "category": "green"
+    },
+    {
+      "id": 12,
+      "name": "snaks",
+      "description": "coke",
+      "price": 10,
+      "isOutOfStock": false,
+      "category": "red"
+    },
+    {
+      "id": 13,
+      "name": "mouse",
+      "description": "pc",
+      "price": 700,
+      "isOutOfStock": false,
+      "category": "movie"
+    }
+  ],
+  "cart": [
+    {
+      "productID": 2,
+      "present": true,
+      "quantity": 2,
+      "id": 2
+    },
+    {
+      "productID": 2,
+      "present": false,
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "productID": 5,
+      "present": true,
+      "quantity": 2,
+      "id": 5
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 10
+    },
+    {
+      "productID": 2,
+      "present": false,
+      "quantity": 1,
+      "id": 11
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 12
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 13
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 14
+    },
+    {
+      "productID": 5,
+      "present": false,
+      "quantity": 1,
+      "id": 15
+    }
+  ]
+}
