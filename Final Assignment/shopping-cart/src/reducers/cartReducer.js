@@ -1,8 +1,7 @@
 function cartReducer (currentState = [], action) {
     if (action.type === 'ADD_PRODUCT_TO_CART') {
-        let newState = [];
         let present = false;
-            newState = currentState.map((product) => {
+        let newState = currentState.map((product) => {
                 if (action.payload.productID === product.productID){
                     present = true;
                     const newItem = { ...product , quantity: action.payload.quantity};

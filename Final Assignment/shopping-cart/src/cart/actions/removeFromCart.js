@@ -9,7 +9,6 @@ function removeItemFromCart(product, cartItems){
             // if quantity is 1, then after removing it from server, it needs to be removed from redux
             // hence we call REMOVE_PRODUCT_FROM_REDUX action
             prod.quantity = 0;
-            console.log('prod quan', prod);
             cartApi
                 .remove(prod)
                     .then((response) => {
@@ -31,7 +30,6 @@ function removeItemFromCart(product, cartItems){
 
             cartApi
                 .save(initialElement).then((res) => {
-                    console.log("resp", res);
                     const action = { type: 'ADD_PRODUCT_TO_CART', payload: res }
                     dispatch(action);
                 });

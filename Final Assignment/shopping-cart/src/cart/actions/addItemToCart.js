@@ -26,9 +26,8 @@ function addItemToCart(product, cartItems){
             initialElement.id = 0;
         }
         cartApi
-            .save(initialElement).then((res) => {
-                console.log("resp", res);
-                const action = { type: 'ADD_PRODUCT_TO_CART', payload: res }
+            .save(initialElement).then((data) => {
+                const action = { type: 'ADD_PRODUCT_TO_CART', payload: data }
                 dispatch(action);
             });
     }
