@@ -21,6 +21,7 @@ class ProductItem extends Component {
                 <label htmlFor="">Out of Stock</label>
                 <br />
                 <input type="button" value="Remove" onClick={() => remove(product)} />
+                <span> </span>
                 {isOutOfStock ? 
                     <input type="button" value="Add to Cart" disabled onClick={() => addItemToCart(product, cart)} /> :
                     <input type="button" value="Add to Cart" onClick={() => addItemToCart(product, cart)} />

@@ -1,26 +1,13 @@
 import cartApi from '../services/cartApi';
-export function getAllCartItemsFromServer() {
-    return function(dispatch) {
-        let allCart=[];
-        cartApi
-            .getAll()
-            .then((resp) => {
-                allCart = resp;
-                const action = { type: "PRODUCT_LIST_IN_CART", payload: allCart };
-                dispatch(action);
-            });
-    }
-}
 
-function checkIfExists(arr, id) {
-    const found = arr.find(el => el.productID === id);
+function checkIfExists(items, id) {
+    const found = items.find(el => el.productID === id);
     return found;
   }
   
-
+// func that adds item to cart. Takes product to be added and the entire cart list as args
 function addItemToCart(product, cartItems){
     return (dispatch) => {
-        console.log(product);
         // func to check if product already exists in cart items
         const prodExists =  checkIfExists(cartItems, product.id);
         // if product exists, then increment quantity
@@ -30,8 +17,8 @@ function addItemToCart(product, cartItems){
             productID: product.id,
         }
         // find the element that already exists and increment
-        // undefined -> only one value (does not exist)
-        // object -> value exists
+        // undefined -> first value
+        // not undefined -> value exists. hence increment quantity
         if (prodExists !== undefined) {
             initialElement.quantity = prodExists.quantity + 1;
         } else {

@@ -1,5 +1,6 @@
 import cartApi from '../services/cartApi';
 
+// func to remove item from cart
 function removeItemFromCart(product, cartItems){
     return (dispatch) => {
         const prod = cartItems.find((item) => item.productID === product.id);
