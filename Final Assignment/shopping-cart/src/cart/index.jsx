@@ -1,26 +1,38 @@
 import React, { useRef } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import CartItem from '../cart/views/CartItem';
+import cartActionCreators from '../cart/actions/index';
+import CartList from '../cart/views/CartList'
 
 class Cart extends React.Component {
     render() {
-        const {id} = this.props.data
-        console.log(this.props.data)
         return (
             <div>
                 <h1>Cart</h1>
-                <span>Cart count: {this.props.data.length} </span>
-                <div>Cart Items:  </div>
-                <span>id: {id}</span>
+                <CartList 
+                    cartItems={this.props.cart}
+                    products={this.props.products}
+                />
             </div>
         )
     }
 }
 
-const mapStateToProps = ({ cart }) => {
+// const mapStateToProps = (state) => {
+//     return {
+//         cart: state.cart,
+//         products: state.products,
+//     }
+// }
+const mapStateToProps = ({products, cart}) => {
     return {
-        data: cart, 
-    }      
+        cart,
+        products,
+    }
 }
 
-export default connect(mapStateToProps, null)(Cart);
+const mapDispatchToProps = (dispatch) => bindActionCreators(cartActionCreators, dispatch);
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
