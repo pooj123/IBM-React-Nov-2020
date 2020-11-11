@@ -28,19 +28,15 @@ function addItemToCart(product, cartItems){
             id: 0,
             quantity: 0,
             productID: product.id,
-            present: false,
         }
         // find the element that already exists and increment
         // undefined -> only one value (does not exist)
         // object -> value exists
-        if (prodExists == undefined) {
+        if (prodExists !== undefined) {
+            initialElement.quantity = prodExists.quantity + 1;
+        } else {
             initialElement.quantity = 1;
             initialElement.id = 0;
-            initialElement.present = true;
-        } else {
-            initialElement.quantity = prodExists.quantity + 1;
-            // initialElement.id = product.id;
-            initialElement.present = true; 
         }
         cartApi
             .save(initialElement).then((res) => {
