@@ -9,6 +9,7 @@ class Cart extends React.Component {
         return (
             <div>
                 <h1>Cart</h1>
+                <h4>Number of Items in cart: {this.props.cart.length}</h4>
                 <CartList 
                     cartItems={this.props.cart}
                     products={this.props.products}
