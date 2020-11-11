@@ -9,7 +9,7 @@ class CartItem extends Component {
         const product = productsList.find((item) => {
             return item.id === cartItem.productID;
         });
-    const { name, description, price, category , id:productID } = product;
+    const { name, description, price, category } = product;
         
         return (
             <li>

@@ -22,8 +22,8 @@ class ProductItem extends Component {
                 <br />
                 <input type="button" value="Remove" onClick={() => remove(product)} />
                 {isOutOfStock ? 
-                    <input type="button" value="Add to Cart" disabled onClick={() => addItemToCart(product.id, cart)} /> :
-                    <input type="button" value="Add to Cart" onClick={() => addItemToCart(product.id, cart)} />
+                    <input type="button" value="Add to Cart" disabled onClick={() => addItemToCart(product.id, product, cart)} /> :
+                    <input type="button" value="Add to Cart" onClick={() => addItemToCart(product.id, product, cart)} />
                 }
             </li>
         )

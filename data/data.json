@@ -105,153 +105,28 @@
   ],
   "cart": [
     {
-      "productID": 2,
-      "present": true,
+      "id": 2,
       "quantity": 2,
-      "id": 2
-    },
-    {
       "productID": 2,
-      "present": false,
+      "present": true
+    },
+    {
+      "id": 3,
       "quantity": 1,
-      "id": 3
+      "productID": 6,
+      "present": true
     },
     {
-      "productID": 5,
-      "present": false,
+      "id": 4,
       "quantity": 1,
-      "id": 4
-    },
-    {
-      "productID": 5,
-      "present": true,
-      "quantity": 3,
-      "id": 5
-    },
-    {
-      "present": true,
-      "quantity": 2,
-      "id": 6,
-      "productID": 6
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 7
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 8
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 9
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 10
-    },
-    {
       "productID": 2,
-      "present": false,
-      "quantity": 1,
-      "id": 11
+      "present": true
     },
     {
+      "id": 5,
+      "quantity": 1,
       "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 12
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 13
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 14
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 15
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 16
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 17
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 18
-    },
-    {
-      "productID": 7,
-      "present": false,
-      "quantity": 1,
-      "id": 19
-    },
-    {
-      "productID": 2,
-      "present": false,
-      "quantity": 1,
-      "id": 20
-    },
-    {
-      "productID": 2,
-      "present": false,
-      "quantity": 1,
-      "id": 21
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 22
-    },
-    {
-      "productID": 2,
-      "present": false,
-      "quantity": 1,
-      "id": 23
-    },
-    {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 24
-    },
-    {
-      "present": false,
-      "quantity": 1,
-      "id": 25
-    },
-    {
-      "present": false,
-      "quantity": 1,
-      "id": 26,
-      "productID": 6
+      "present": true
     }
   ]
 }
