@@ -5,30 +5,22 @@ import cartActionCreators from '../actions/index';
 
 class CartItem extends Component {
     render() {
-        const {cartItem , productsList ,cartItems} = this.props;
-        const product = productsList.find((item) => {
-            return item.id === cartItem.productID;
+        const product = this.props.products.filter((item) => {
+            return item.id === this.props.cart.productID;
         });
-    const { name, description, price, category } = product;
         
         return (
             <li>
-                <span className="name" >{name}</span>
-                <span> {category} </span>
-                <div>{description}</div>
-                <div className="price">Rs.{price}</div>
+                <span className="name" >{product[0].name}</span>
+                <span> {product[0].category} </span>
+                <div>{product[0].description}</div>
+                <div><h4>Quantity: {this.props.cart.quantity}</h4> </div>
+                <div className="price">Rs.{product[0].price}</div>
             </li>
         )
     }
 } 
 
-const mapStateToProps = (state) => {
-    return {
-        productsList : state.products,
-        cartItems: state.cart,
-    }
-}
-
 const mapDispatchToProps = (dispatch) => bindActionCreators(cartActionCreators,dispatch);
 
-export default connect(mapStateToProps,mapDispatchToProps)(CartItem)
+export default connect(null,mapDispatchToProps)(CartItem)
