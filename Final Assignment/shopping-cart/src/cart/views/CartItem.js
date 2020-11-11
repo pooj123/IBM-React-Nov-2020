@@ -10,6 +10,8 @@ class CartItem extends Component {
         const product = this.props.products.filter((item) => {
             return item.id === this.props.cart.productID;
         });
+
+        // console.log(cartItems);
         
         return (
             <li>

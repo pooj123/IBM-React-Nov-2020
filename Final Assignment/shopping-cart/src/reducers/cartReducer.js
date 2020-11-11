@@ -15,7 +15,11 @@ function cartReducer (currentState = [], action) {
         return newState;
     }
     if (action.type === 'REMOVE_PRODUCT_FROM_CART') {
-        const newState = currentState.filter(p => p.id !== action.payload.id);
+        const newState = currentState.filter(p => p.productID !== action.payload);
+        return newState;
+    }
+    if (action.type === 'REMOVE_PRODUCT_FROM_REDUX') {
+        const newState = currentState.filter(p => p.productID !== action.payload);
         return newState;
     }
     return currentState;

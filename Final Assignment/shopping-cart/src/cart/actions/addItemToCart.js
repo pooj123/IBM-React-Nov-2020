@@ -39,7 +39,7 @@ function addItemToCart(product, cartItems){
             initialElement.present = true;
         } else {
             initialElement.quantity = prodExists.quantity + 1;
-            initialElement.id = product.id;
+            // initialElement.id = product.id;
             initialElement.present = true; 
         }
         cartApi
