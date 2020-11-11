@@ -3,10 +3,9 @@ import CartItem from './CartItem';
 
 const CartList = (props) => {
     const {cartItems} = props;
-    const cartList = cartItems.map((item) => (
+    const cartList = cartItems.map((product) => (
         <CartItem
-            key={item.id}
-            cartItem={item}
+            cartItem={product}
         />
     ));
     return (
