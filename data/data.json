@@ -129,10 +129,10 @@
       "id": 5
     },
     {
-      "productID": 5,
-      "present": false,
-      "quantity": 1,
-      "id": 6
+      "present": true,
+      "quantity": 2,
+      "id": 6,
+      "productID": 6
     },
     {
       "productID": 5,
@@ -241,6 +241,17 @@
       "present": false,
       "quantity": 1,
       "id": 24
+    },
+    {
+      "present": false,
+      "quantity": 1,
+      "id": 25
+    },
+    {
+      "present": false,
+      "quantity": 1,
+      "id": 26,
+      "productID": 6
     }
   ]
 }

@@ -33,22 +33,11 @@ function addItemToCart(productID, cartItems){
     return (dispatch) => {
         console.log(productID);
         const product = cartItems.find((item) => item.productID === productID);
-        const item ={productID}
-        // const item={};
-        if (product === undefined){
-            item.present = false;
-            item.quantity = 1;
-            item.id = 0;
-        } else {
-            item.present = true;
-            item.quantity = product.quantity+1;
-            item.id = productID
-        }
-        console.log(item);
+        const item ={productID, id, present, quantity}
         cartApi
-            .save(item).then((response) => {
-                console.log("resp", response);
-                const action = { type: 'ADD_PRODUCT_TO_CART', payload: response }
+            .save(item).then((items) => {
+                console.log("resp", items);
+                const action = { type: 'ADD_PRODUCT_TO_CART', payload: items }
                 dispatch(action);
             });
     }
