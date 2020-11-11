@@ -6,6 +6,7 @@ const CartList = (props) => {
     const cartList = cartItems.map((product) => (
         <CartItem
             cartItem={product}
+            key={product.id}
         />
     ));
     return (
